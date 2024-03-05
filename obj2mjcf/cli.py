@@ -202,7 +202,7 @@ def process_obj(filename: Path, args: Args) -> None:
     mesh = trimesh.load(
         filename,
         split_object=True,
-        group_material=True,
+        group_material=False,  # If True, the submeshes that have the same material are merged. Takuma doesn't want that
         process=False,
         # Note setting this to False is important. Without it, there are a lot of weird
         # visual artifacts in the texture.
